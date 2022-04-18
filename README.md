@@ -1,46 +1,38 @@
-# Getting Started with Create React App
+# Assignment - Testing API calls in React with the Studio Ghibli API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Part 1
 
-## Available Scripts
+Have a read of the React Testing Library Documentation: https://testing-library.com/docs/react-testing-library/example-intro#full-example
+and Mock Service Worker Library: https://mswjs.io/
 
-In the project directory, you can run:
+# Part 2
 
-### `npm start`
+Now you have familiarised yourself with the React Testing and Mock Service Worker Libraries and how to mock an API call example(s) you are ready for the next step!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Your challenge is to put these learnings into practice and mock an API call from a React app (don’t forget the TypeScript flag!) that you’ve created. For this challenge you will be putting into practice your knowledge of TypeScript, React, Hooks, APIs and Testing.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# The Brief
 
-### `npm test`
+The aim of this is to make a GET request to the Studio Ghibli films end point and for your App component to display the title of the first film that comes back from the API end point ('Castle in the Sky').
+Studio Ghibli API docs: https://ghibliapi.herokuapp.com/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In this task you need your App component but you are more than welcome to create another component if you like!
 
-### `npm run build`
+Once your App is calling the Studio Ghibli API and displaying the first film title on your page ('Castle in the Sky'), we'd like you to add a test to mock (or “stub”) the API response. This should enable you to write a test to check the first film title has been rendered correctly (Hint: 'Castle in the Sky' should be in the document 😉).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Part 3 (extension)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Write a test checking your App component displays an error message saying "Oops… something went wrong, try again 🤕" in the scenario the API returns Status Code 500 (Internal Server Error: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 ).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Write another test checking your App component displays an error message saying "418 I'm a tea pot 🫖, silly" in the scenario the API returns Status Code 418 (I’m a tea pot: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418 )
 
-### `npm run eject`
+# Top Tips
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- This exercise is about what your app looks like so don’t worry about styling!!! The purpose is to mock an API call in React (if you have time to add styling later - then great! But make sure you get through the extensions first 🫖)
+- You will need to create a React app from scratch and strip out excess boiler plate, using
+  npx create-react-app myAppName --template typescript
+- You will need to make an API call (you may/will want to consider using and the Hook for this)
+- You will need to consider waiting for your data to load (Hint: and )
+- Remember to commit little and often to GitHub, and to keep your commit messages nice and descriptive ✅
+- Don’t forget to add a README explaining how to run your app when it’s done! 🔥
+- Remember to check the documentation regularly
