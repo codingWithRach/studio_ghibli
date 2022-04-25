@@ -9,9 +9,10 @@ const dummyData = [
   },
   { title: "Grave of the Fireflies" },
 ];
+const url = "https://ghibliapi.herokuapp.com/films";
 
 const server = setupServer(
-  rest.get("https://ghibliapi.herokuapp.com/films", (req, res, ctx) => {
+  rest.get(url, (req, res, ctx) => {
     return res(ctx.json(dummyData));
   })
 );
@@ -23,5 +24,29 @@ afterAll(() => server.close());
 test("renders the film title Castle in the Sky", async () => {
   render(<Layout />);
   const titleElement = await screen.findByText(/Castle in the Sky/i);
+  expect(titleElement).toBeInTheDocument();
+});
+
+test("renders correct error message for error code 500", async () => {
+  server.use(
+    rest.get(url, (req, res, ctx) => {
+      return res(ctx.status(500));
+    })
+  );
+  render(<Layout />);
+  const titleElement = await screen.findByText(
+    /Oops… something went wrong, try again 🤕/i
+  );
+  expect(titleElement).toBeInTheDocument();
+});
+
+test("renders correct error message for error code 418", async () => {
+  server.use(
+    rest.get(url, (req, res, ctx) => {
+      return res(ctx.status(418));
+    })
+  );
+  render(<Layout />);
+  const titleElement = await screen.findByText(/418 I'm a tea pot 🫖, silly/i);
   expect(titleElement).toBeInTheDocument();
 });
