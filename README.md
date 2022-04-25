@@ -1,43 +1,16 @@
-# Assignment - Testing API calls in React with the Studio Ghibli API
+# Testing API calls in React with the Studio Ghibli API
 
-## Part 1
+## Introduction
 
-Have a read of the React Testing Library Documentation: https://testing-library.com/docs/react-testing-library/example-intro#full-example
-and Mock Service Worker Library: https://mswjs.io/
-
-## Part 2
-
-Now you have familiarised yourself with the React Testing and Mock Service Worker Libraries and how to mock an API call example(s) you are ready for the next step!
-
-Your challenge is to put these learnings into practice and mock an API call from a React app (don’t forget the TypeScript flag!) that you’ve created. For this challenge you will be putting into practice your knowledge of TypeScript, React, Hooks, APIs and Testing.
+This project uses Mock Service Worker Library (msw) to mock calls to the Studio Ghibli api
 
 ## The Brief
 
-The aim of this is to make a GET request to the Studio Ghibli films end point and for your App component to display the title of the first film that comes back from the API end point ('Castle in the Sky').
-Studio Ghibli API docs: https://ghibliapi.herokuapp.com/
+Display the title of the first film returned from the Studio Ghibli API: Castle in the Sky
 
-In this task you need your App component but you are more than welcome to create another component if you like!
+Use msw to stub the api response, then write a test to check that the first film title has been rendered correctly
 
-Once your App is calling the Studio Ghibli API and displaying the first film title on your page ('Castle in the Sky'), we'd like you to add a test to mock (or “stub”) the API response. This should enable you to write a test to check the first film title has been rendered correctly (Hint: 'Castle in the Sky' should be in the document 😉).
-
-## Part 3 (extension)
-
-Write a test checking your App component displays an error message saying "Oops… something went wrong, try again 🤕" in the scenario the API returns Status Code 500 (Internal Server Error: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 ).
-
-Write another test checking your App component displays an error message saying "418 I'm a tea pot 🫖, silly" in the scenario the API returns Status Code 418 (I’m a tea pot: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418 )
-
-## Top Tips
-
-- This exercise is about what your app looks like so don’t worry about styling!!! The purpose is to mock an API call in React (if you have time to add styling later - then great! But make sure you get through the extensions first 🫖)
-- You will need to create a React app from scratch and strip out excess boiler plate, using
-  npx create-react-app myAppName --template typescript
-- You will need to make an API call (you may/will want to consider using and the Hook for this)
-- You will need to consider waiting for your data to load (Hint: and )
-- Remember to commit little and often to GitHub, and to keep your commit messages nice and descriptive ✅
-- Don’t forget to add a README explaining how to run your app when it’s done! 🔥
-- Remember to check the documentation regularly
-
-# Setup
+Write additional tests to check that the appropriate error message is rendered for api errors 500 and 418
 
 ## Installation
 
@@ -47,18 +20,20 @@ In the project directory, install the dependencies using the command:
 
     npm install
   
-## Available Scripts
-
 In the project directory, run
 
     npm start
   
-to run the app in development mode.
+to run the app.  Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.
-
-To launch the test runner in interactive watch mode, run:
+To run the tests, run:
 
      npm test
+
+## Resources
+
+React Testing Library Documentation: https://testing-library.com/docs/react-testing-library/example-intro#full-example
+
+Mock Service Worker Library: https://mswjs.io/
+
+Studio Ghibli API docs: https://ghibliapi.herokuapp.com/
